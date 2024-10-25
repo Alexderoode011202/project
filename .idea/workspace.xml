@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="743e3450-bde5-4768-bcf4-1fce7886d091" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/policy_iteration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/value_iteration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/value_iteration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/policy_iteration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/policy_iteration.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
       <updated>1729864803211</updated>
       <workItem from="1729864806578" duration="5000" />
       <workItem from="1729864864861" duration="1262000" />
-      <workItem from="1729894396456" duration="52000" />
+      <workItem from="1729894396456" duration="1608000" />
     </task>
     <servers />
   </component>
