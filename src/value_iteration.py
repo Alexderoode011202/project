@@ -193,6 +193,7 @@ from numpy import ndarray
 import numpy as np
 from typing import Dict, Callable, Tuple
 import matplotlib.pyplot as plt
+import os
 
 def value_iteration(maze: ndarray = maze_generator(),
                     reward_function: Callable = reward_function,
@@ -201,10 +202,10 @@ def value_iteration(maze: ndarray = maze_generator(),
                     checkpoint_position: Tuple[int, int] = (5, 3),
                     end_position: Tuple[int, int] = (8, 7),
                     verbose: bool = True,
-                    images: Dict[int, str] = {1: "images\\arrow-up.png",
-                                              2: "images\\arrow-down.png",
-                                              3: "images\\arrow-left.png",
-                                              4: "images\\arrow-right.png"}
+                    images: Dict[int, str] = {1: os.path.join("images", "arrow-up.png"),
+                                              2: os.path.join("images", "arrow-down.png"),
+                                              3: os.path.join("images", "arrow-left.png"),
+                                              4: os.path.join("images", "arrow-right.png")}
                     ) -> Tuple[ndarray, Dict[str, float]]:
 
     move_dict = {"up": (-1, 0), "down": (1, 0), "left": (0, -1), "right": (0, 1)}
