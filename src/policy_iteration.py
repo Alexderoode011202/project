@@ -51,6 +51,7 @@ def policy_iteration(verbose: bool = True,) -> Dict[bool, ndarray]:
     while True:  # Policy iteration
         iteration += 1
         steps = 0
+        delta = 0.0
         while True:  # Policy evaluation
             delta = 0.0
             updates = []  # For learning stability
@@ -78,13 +79,21 @@ def policy_iteration(verbose: bool = True,) -> Dict[bool, ndarray]:
             if delta < THRESHOLD:
                 break
             
-            # Record convergence speed
-            convergence_speeds.append(delta)
+            # # Record convergence speed
+            # convergence_speeds.append(delta)
 
-            # Calculate learning stability
-            if updates:
-                learning_stability = np.std(updates)
-                learning_stabilities.append(learning_stability)
+            # # Calculate learning stability
+            # if updates:
+            #     learning_stability = np.std(updates)
+            #     learning_stabilities.append(learning_stability)
+            
+        # Record convergence speed
+        convergence_speeds.append(delta)
+
+        # Calculate learning stability
+        if updates:
+            learning_stability = np.std(updates)
+            learning_stabilities.append(learning_stability)
 
         # Policy improvement
         policy_stable = True
