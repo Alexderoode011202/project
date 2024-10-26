@@ -18,17 +18,19 @@ def maze_generator() -> ndarray:
     
     return matrix
 
-def reward_function(agent_position: Tuple[int, int], 
-                    passed_checkpoint: bool, 
-                    checkpoint_position: Tuple[int, int], 
+def reward_function(agent_position: Tuple[int, int],
+                    passed_checkpoint: bool,
+                    checkpoint_position: Tuple[int, int],
                     end_position: Tuple[int, int]
                     ) -> int:
-    
+
     if agent_position == end_position and passed_checkpoint:
         return 100
     elif agent_position == checkpoint_position and not passed_checkpoint:
-        return 10
-    return -1
+        return 50
+    elif agent_position == end_position and not passed_checkpoint:
+        return -50
+    return -20
 
 
     

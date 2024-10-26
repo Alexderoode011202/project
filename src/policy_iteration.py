@@ -238,4 +238,3 @@ if __name__ == "__main__":
     # Run the policy iteration
     policy = policy_iteration()
     display_path(policy)
-
