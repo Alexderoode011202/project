@@ -128,10 +128,12 @@ def policy_iteration(verbose: bool = True,) -> Dict[bool, ndarray]:
     return policy
 
 def plot_results(steps_to_goal, convergence_speeds, learning_stabilities, value_func, policy):
-    IMAGES: Dict[int, str] = {1: os.path.join("images", "arrow-up.png"),  
-                                                2: os.path.join("images", "arrow-down.png"),  
-                                                3: os.path.join("images", "arrow-left.png"),  
-                                                4: os.path.join("images", "arrow-right.png")}
+    IMAGES: Dict[int, str] = {
+        1: os.path.join("images", "arrow-up.png"),  
+        2: os.path.join("images", "arrow-down.png"),  
+        3: os.path.join("images", "arrow-left.png"),  
+        4: os.path.join("images", "arrow-right.png")
+        }
     # Generate plots for the value function and policy
     for checkpoint_value in policy.keys():
         plt.matshow(value_func[checkpoint_value])

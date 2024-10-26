@@ -3,6 +3,7 @@ from numpy import ndarray
 import numpy as np
 from typing import Dict, Callable, Tuple
 import matplotlib.pyplot as plt
+import os
 
 def value_iteration(maze: ndarray = maze_generator(),
                     reward_function: Callable = reward_function,
@@ -11,10 +12,11 @@ def value_iteration(maze: ndarray = maze_generator(),
                     checkpoint_position: Tuple[int, int] = (8, 5),  # Position of checkpoint
                     end_position: Tuple[int, int] = (8, 7),  # Position of the goal
                     verbose: bool = True,  # Verbosity flag for logging
-                    images: Dict[int, str] = {1: "images\\arrow-up.png",  
-                                               2: "images\\arrow-down.png", 
-                                               3: "images\\arrow-left.png", 
-                                               4: "images\\arrow-right.png"}  
+                    images: Dict[int, str] = {
+                        1: os.path.join("images", "arrow-up.png"),      # Image for policy 1 (up)
+                        2: os.path.join("images", "arrow-down.png"),    # Image for policy 2 (down)
+                        3: os.path.join("images", "arrow-left.png"),    # Image for policy 3 (left)
+                        4: os.path.join("images", "arrow-right.png")}   # Image for policy 4 (right)
                     ) -> ndarray:
     # Initialize value function and policy for whether the checkpoint was passed or not
     value_func: Dict[bool, ndarray] = {True: np.zeros(shape=maze.shape), False: np.zeros(shape=maze.shape)}
