@@ -11,20 +11,19 @@ def value_iteration(maze: ndarray = maze_generator(),
                     checkpoint_position: Tuple[int, int] = (8, 5),  # Position of checkpoint
                     end_position: Tuple[int, int] = (8, 7),  # Position of the goal
                     verbose: bool = True,  # Verbosity flag for logging
-                    images: Dict[int, str] = {1: "images\\arrow-up.png",  # Image for policy 1 (up)
-                                               2: "images\\arrow-down.png",  # Image for policy 2 (down)
-                                               3: "images\\arrow-left.png",  # Image for policy 3 (left)
-                                               4: "images\\arrow-right.png"}  # Image for policy 4 (right)
+                    images: Dict[int, str] = {1: "images\\arrow-up.png",  
+                                               2: "images\\arrow-down.png", 
+                                               3: "images\\arrow-left.png", 
+                                               4: "images\\arrow-right.png"}  
                     ) -> ndarray:
-    # Initialize value function and policy for both states (checkpoint passed or not)
+    # Initialize value function and policy for whether the checkpoint was passed or not
     value_func: Dict[bool, ndarray] = {True: np.zeros(shape=maze.shape), False: np.zeros(shape=maze.shape)}
     policy: Dict[bool, ndarray] = {True: np.zeros(shape=maze.shape), False: np.zeros(shape=maze.shape)}
 
     # Lists to store metrics for analysis
-    steps_to_goal = []  # Steps taken to reach the goal
-    efficiencies = []  # Efficiency metrics
-    convergence_speeds = []  # Speed of convergence metrics
-    learning_stabilities = []  # Stability of learning metrics
+    steps_to_goal = []  
+    convergence_speeds = []  
+    learning_stabilities = []  
 
     biggest_change = float('inf')  # Initialize the largest change in value function
     passed_checkpoint = (True, False)  # States to evaluate (checkpoint passed or not)
