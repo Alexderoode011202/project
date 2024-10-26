@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="743e3450-bde5-4768-bcf4-1fce7886d091" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/policy_iteration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/policy_iteration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +68,7 @@
       <workItem from="1729864864861" duration="1262000" />
       <workItem from="1729894396456" duration="1608000" />
       <workItem from="1729959891870" duration="44000" />
+      <workItem from="1729971759332" duration="633000" />
     </task>
     <servers />
   </component>

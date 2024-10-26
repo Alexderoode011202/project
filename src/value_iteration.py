@@ -63,7 +63,6 @@ def value_iteration(maze: ndarray = maze_generator(),
                         reward = reward_function(agent_position=current_pos, passed_checkpoint=checkpoint_value,
                                                  checkpoint_position=checkpoint_position, end_position=end_position)
 
-                        # Calculate the value of the current action
                         value = reward + discount_value * value_func[checkpoint_value][new_pos]
 
                         # Update best value if current value is better
@@ -77,7 +76,6 @@ def value_iteration(maze: ndarray = maze_generator(),
                     biggest_change = max(biggest_change, change)  
                     value_func[checkpoint_value][current_pos] = best_value 
 
-        # Store convergence metrics
         convergence_speeds.append(biggest_change)
         learning_stabilities.append(np.std(updates))
 
@@ -149,7 +147,7 @@ def value_iteration(maze: ndarray = maze_generator(),
     # Path Tracing
     def trace_path(policy, start_position, end_position, max_steps=100):
         path = []  
-        current_pos = start_position  # Starting position of the agent
+        current_pos = start_position  
         steps = 0  
         # Dictionary to map policy values to move directions
         move_dict = {1: (-1, 0), 2: (1, 0), 3: (0, -1), 4: (0, 1)}
@@ -161,10 +159,11 @@ def value_iteration(maze: ndarray = maze_generator(),
             if current_pos == checkpoint_position:
                 passed_checkpoint = True  
             move = int(policy[passed_checkpoint][current_pos])  
+            
             # Calculate next position based on the move
             next_pos = (current_pos[0] + move_dict.get(move, (0, 0))[0],
                         current_pos[1] + move_dict.get(move, (0, 0))[1])
-            # If the next possition is a wall beak the loop
+            
             if maze[next_pos] == '1':
                 break
             current_pos = next_pos  
